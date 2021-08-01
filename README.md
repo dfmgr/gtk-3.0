@@ -5,7 +5,7 @@ DESCRIBE
 Automatic install/update:
 
 ```shell
-bash -c "$(curl -LSs https://github.com/dfmgr/gtk-3.0/raw/master/install.sh)"
+bash -c "$(curl -LSs https://github.com/dfmgr/gtk-3.0/raw/main/install.sh)"
 ```
 
 Manual install:
