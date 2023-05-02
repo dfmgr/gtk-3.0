@@ -175,6 +175,9 @@ RUBY_GEMS=""
 PYTHON_PIP=""
 PHP_COMPOSER=""
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# Run custom actions
+\find /lib* /usr/lib* /usr/local/lib* -iname '*libgtk*3*.so*' -type f 2>/dev/null | grep -F '.' | grep -q '^' && GLOBAL_OS_PACKAGES="true"
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Show a custom message after install
 __run_post_message() {
   true
@@ -183,7 +186,6 @@ __run_post_message() {
 # Define pre-install scripts
 __run_pre_install() {
   local getRunStatus=0
-  \find /lib* /usr/lib* /usr/local/lib* -iname '*libgtk*3*.so*' -type f 2>/dev/null | grep -F '.' | grep -q '^' && SYSTEM_PACKAGES="true"
   return $getRunStatus
 }
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
